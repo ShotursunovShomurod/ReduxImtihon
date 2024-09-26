@@ -12,7 +12,6 @@ import {
 import { Link } from "react-router-dom";
 const Cartproducts = ({ data }) => {
   const dispatch = useDispatch();
-  console.log(data);
 
   return (
     <>
@@ -55,9 +54,11 @@ const Cartproducts = ({ data }) => {
                     />
                   </div>
                   <div className="flex flex-col gap-4 pr-7">
-                    <p className="text-[#190D26] text-[19px] font-[600]">
-                      {el.name}
-                    </p>
+                  <Link to={`/products/${el.id}`}>
+                  <p className="text-[#190D26] hover:text-[20px] transition-all text-[19px] font-[600]">
+                    {el.name}
+                  </p>
+                </Link>
 
                     <p className="text-[16px] text-[#190D26] font-[400] lg:w-[100%] w-[40%]">
                       {el.description}

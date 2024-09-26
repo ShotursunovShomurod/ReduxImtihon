@@ -5,16 +5,13 @@ import Skeleton from "../skeleton/skeleton";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/api/slice/cartSilice";
-const Products = ({ data, isLoading, brands, colors }) => {
+const Products = ({ data, isLoading }) => {
   const link = useRef(null);
   const dispatch = useDispatch();
   const location = useLocation();
   useEffect(() => {
     const clickLink = () => link.current.click();
     setTimeout(clickLink, 10);
-    // return () => {
-    //   clearTimeout(clickLink);
-    // };
   }, [location.pathname]);
 
   return (
@@ -24,16 +21,16 @@ const Products = ({ data, isLoading, brands, colors }) => {
         {data?.map((el) => {
           return (
             <div key={el.id} className=" ">
-              <div className="bg-[#F4F4F4] p-[6px] flex items-center justify-center mb-[20px]">
+              <div className="p-[6px] flex items-center justify-center mb-[20px]">
                 <img
-                  className="w-[168px] h-[185px] object-contain bg-[#F4F4F4] "
+                  className="w-full h-[200px] object-contain bg-[#F4F4F4] "
                   src={el.image_url}
                   alt=""
                 />
               </div>
               <div className="flex flex-col gap-4 pr-4">
                 <Link to={`/products/${el.id}`}>
-                  <p className="text-[#190D26] text-[19px] font-[600]">
+                  <p className="text-[#190D26] hover:text-[20px] transition-all text-[19px] font-[600]">
                     {el.name}
                   </p>
                 </Link>
@@ -45,7 +42,7 @@ const Products = ({ data, isLoading, brands, colors }) => {
                     <div key={exs}>
                       <button
                         className="w-[25px] border rounded-full h-[25px]"
-                        style={{ background: color}}
+                        style={{ background: color }}
                       ></button>
                     </div>
                   ))}
@@ -55,10 +52,12 @@ const Products = ({ data, isLoading, brands, colors }) => {
                 </p>
                 <button
                   onClick={() => dispatch(addToCart(el))}
-                  className="border gap-4  py-[8px] text-[22px] px-[10px] text-[#fff] w-[80%] bg-[#0BA42D] flex items-center justify-center rounded-[4px]"
+                  className="border gap-4 py-[8px] text-[22px] px-[10px] text-[#fff] w-[80%] bg-[#0BA42D] flex items-center justify-center rounded-[4px] transition-all duration-300 ease-in-out hover:bg-[#08A12A] hover:shadow-lg hover:scale-105 active:bg-[#078B25] active:scale-95 active:shadow-sm"
                 >
-                  <IoCartOutline className="text-[#fff]" />{" "}
-                  <p className="text-[13px] text-[#fff] font-[500]">Add to Cart</p>
+                  <IoCartOutline className="text-[#fff]" />
+                  <p className="text-[13px] text-[#fff] font-[500]">
+                    Add to Cart
+                  </p>
                 </button>
               </div>
             </div>

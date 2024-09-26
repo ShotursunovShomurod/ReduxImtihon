@@ -30,7 +30,6 @@ const Header = () => {
               className={`nav__collect flex  gap-3 ${isMenuOpen ? "show" : ""}`}
             >
               <div className="flex items-center gap-[40px] navbar navbar__collection">
-                {/* <BasicModal ooo="Add" /> */}
                 <NavLink
                   className={"text-[20px] font-bold text-[#0D2612]  "}
                   to={"/products"}

@@ -29,8 +29,8 @@ export const categoryApi = api.injectEndpoints({
   }),
 });
 
-// GET -> build.query
-// POST, PUT, PATCH, DELETE -> build.mutation
+
+
 
 export const {
   useGetCategoryQuery,

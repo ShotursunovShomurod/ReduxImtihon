@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import Products from "../products/products";
 import Hero from "../hero/Hero";
 import Up from '../../assets/images/up.png'
-import {
-  useGetBrandsQuery,
-  useGetCategoryQuery,
-  useGetColorsQuery,
-} from "../../redux/api/categoreyApi";
+import {useGetBrandsQuery,useGetCategoryQuery,useGetColorsQuery,} from "../../redux/api/categoreyApi";
 import { CgCheck } from "react-icons/cg";
 
 const ProductsSection = () => {
@@ -43,7 +39,7 @@ const ProductsSection = () => {
             return (
               <div key={brand} className="text-[22px] font-bold">
                 <input
-                  className="bg-[#0BA42D] text-[22px]"
+                  className="border border-[#0BA42D] text-[22px]"
                   data-brand={brand}
                   type="checkbox"
                   checked={checked}
@@ -65,7 +61,7 @@ const ProductsSection = () => {
             <h2 className="text-[18px] mb-3 font-bold">Color</h2>
             <img src={Up} alt="" />
             </div>
-            <div className="flex gap-4 flex-wrap">
+            <div className="flex gap-1 flex-wrap">
               {colors?.map((color) => {
                 return (
                   <button

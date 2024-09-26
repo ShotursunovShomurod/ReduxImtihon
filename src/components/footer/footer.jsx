@@ -1,8 +1,8 @@
 import React from "react";
-import img from "../../assets/images/footer.png";
-import img1 from "../../assets/images/icon.png";
-import img2 from "../../assets/images/cc.png";
-import img3 from "../../assets/images/Group 15.png";
+import Logo from "../../assets/images/footer.png";
+import Logo1 from "../../assets/images/icon.png";
+import Logo2 from "../../assets/images/GG.png";
+import Logo3 from "../../assets/images/Group 15.png";
 import "./footer.css";
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="flex flex-col gap-3 then">
             <img
               className="w-[98px] h-[62px] object-contain"
-              src={img}
+              src={Logo}
               alt=""
             />
             <p className="lg:text-[20px] md:text-[19px] sm:text-[18px] text-[#EBE2F4] w-[200px]  leading-7">
@@ -74,12 +74,12 @@ const Footer = () => {
           </div>
         </div>
         <div className="container mt-6 pb-10">
-          <img className=" mb-10" src={img1} alt="" />
+          <img className=" mb-10" src={Logo1} alt="" />
           <hr />
           <div className="flex items-center justify-between mt-[25px] desc">
-            <img src={img2} alt="" />
+            <img src={Logo2} alt="" />
             <div className="flex gap-4 items-center">
-              <img src={img3} alt="" />
+              <img src={Logo3} alt="" />
               <p className="text-[16px] text-[#fff]">Help Center</p>
             </div>
             <p className="text-[16px] text-[#fff]">Privacy & Policy</p>
